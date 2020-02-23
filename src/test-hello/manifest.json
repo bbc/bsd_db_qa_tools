@@ -1,0 +1,13 @@
+{
+    "payload": "payload.js",
+    "title": "Hello Test",
+    "product-requirement":"Client needs to display Test Passed when the success event is fired.",
+    "specification": "BBC Interactive HTML Spec",
+    "assertion": "Test passes if greeting is truthy",
+    "tags": {
+        "owner": "partner-experience",
+        "testpack-id": [],
+        "specification-section": "",
+        "category": "Example Tests"
+    }
+}

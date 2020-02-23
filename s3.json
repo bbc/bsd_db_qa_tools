@@ -1,0 +1,49 @@
+{
+  "Accounts": {
+    "tvr-pipeline-prod": {
+      "AccountId": "979446310614"
+    },
+    "tv-certification-prod": {
+      "AccountId": "615125061974"
+    },
+    "tv-certification-dev": {
+      "AccountId": "931726921995"
+    }
+  },
+  "Environments": {
+    "live": {
+      "Bucket": {
+        "BucketName": "act-test-template",
+        "BucketAccount": "tv-certification-prod",
+        "CloudFront": "03b14fba81ee48622f3fa200e3cfaf01fe5be608422346128f33510ea798eee0c773f0d9b357eda1b62ed95d24519488"
+      }
+    },
+    "test": {
+      "Bucket": {
+        "BucketName": "act-test-template-test",
+        "BucketAccount": "tv-certification-dev",
+        "CloudFront": "e8f87e5806daab8e3c6cbf99894d784af04d629337f682d23a026b7f26132ed34c59e0c92c78106d0b286a68b2e57592,1922fdb1a35360899ad6451184adcde390ecd4d0a3083c1c91a8f9aa0ff345b8aca149d3f032e8ddc1f2332d498c690e"
+      }
+    }
+  },
+  "GitHub": {
+    "Owner": "bbc",
+    "Repo": "act-test-template",
+    "Branch": "master"
+  },
+  "CodePipeline": {
+    "PipelineAccount": "tvr-pipeline-prod",
+    "Versioned": true,
+    "PreReqsStack": "certification-bbctvapps-codepipeline-prereqs"
+  },
+  "CodeBuild": {
+    "Image": "itv-ci-images-puppeteer:latest",
+    "Environment": {
+      "PUPPETEER_NO_SANDBOX": "true"
+    }
+  },
+  "Release": {
+    "S3BasePath": "act/test/template",
+    "Directory": "build"
+  }
+}
